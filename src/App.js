@@ -7,6 +7,7 @@ import { Home } from './components/Home';
 import { NotFound } from './components/NotFound';
 import { Layout } from './components/Layout';
 import { Posts } from './components/Posts';
+import { SinglePost } from './components/SinglePost';
 
 function App() {
   // u app cemo pisati route... npr routa 1 neka renderuje jednu komponentu i slicno
@@ -21,7 +22,8 @@ function App() {
   return (
 
     <Routes>
-      
+
+      {/* Pocetak Nested Route */}
       <Route path={'/'} element={<Layout />}>
         {/* i u ovoj Layout ce se prikazivati sve ono sto je isto za svaku stranu */}
       <Route path={'/not-found'} element={<NotFound />} />
@@ -29,8 +31,13 @@ function App() {
       <Route path={'/about'} element={<About />} />
       <Route path={'/contact'} element={<Contact />} />
       <Route path={'/posts'} element={<Posts />} />
+      {/* uvodi se komponenta koja ce se load-ovati kada kliknemo na post koji zelimo, ovo je dinamicka komponenta,
+      cije load-ovanje zavisi od ID koji joj se prosledjuje, tako ce znati sta treba da vrati ---dinamicka radnja,
+      --- te dinamicke parametre prikazujemo sa :id -> to je u ovom slucaju, jer znamo da ce sada to biti id*/}
+      <Route path={'/posts/:id'} element={<SinglePost />} />
 
       </Route>
+      {/* Kraj Nested Route */}
       
       {/* na kraju stavljamo gard- sta da se desi ako se ucita npr pogresna putanja ili nesto sto ne postoji
       uvek ce se ucitavati NotFound strana */}
