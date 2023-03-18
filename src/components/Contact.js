@@ -8,14 +8,14 @@ export const Contact = () => {
   const navigate = useNavigate()
   return (
     <div>
-      <ul>
+      {/* <ul> */}
         {/* II NACIN */}
         {/* ovde kazemo sta hocemo da uradi, a to je na klik da pozove ovu f-ju(ona ne prima nikakve parametre vec samo navigira) navigate i prosledimo gde zelimo da ide 
 --- ovi li elementi su ujedno i mnogo laksi za stilizovanje i sredjivanje*/}
-        <li style={{color: 'tomato', cursor:'pointer'}} onClick={() => navigate('/home')}>Home</li>
-        <li  style={{color: 'tomato', cursor:'pointer'}} onClick={() => navigate('/about')}>About</li>
-        <li  style={{color: 'tomato', cursor:'pointer'}} onClick={() => navigate('/contact')}>Contact</li>
-      </ul>
+        {/* <li style={{ color: 'tomato', cursor: 'pointer' }} onClick={() => navigate('/home')}>Home</li>
+        <li style={{ color: 'tomato', cursor: 'pointer' }} onClick={() => navigate('/about')}>About</li>
+        <li style={{ color: 'tomato', cursor: 'pointer' }} onClick={() => navigate('/contact')}>Contact</li>
+      </ul> */}
       <h1>Contact</h1>
     </div>
   )
