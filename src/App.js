@@ -1,9 +1,10 @@
 
-import { Route, Routes } from 'react-router';
+import { Navigate, Route, Routes } from 'react-router';
 import './App.css';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
-import { Home } from './components/Home'
+import { Home } from './components/Home';
+import { NotFound } from './components/NotFound';
 
 function App() {
   // u app cemo pisati route... npr routa 1 neka renderuje jednu komponentu i slicno
@@ -17,9 +18,14 @@ function App() {
       {/* pisemo celu nasu komponentu u property neke druge komponente */}
       {/* path sa '/' zapravo kazemo sta ce se prikazati na toj default stranici */}
       {/* <Route path={'/'} element={<Home />} />  */}
+      <Route path={'/not-found'} element={<NotFound />} />
       <Route path={'/home'} element={<Home />} />
       <Route path={'/about'} element={<About />} />
       <Route path={'/contact'} element={<Contact />} />
+      {/* na kraju stavljamo gard- sta da se desi ako se ucita npr pogresna putanja ili nesto sto ne postoji
+      uvek ce se ucitavati NotFound strana */}
+      <Route path={'/*'} element={<Navigate replace to ={'/not-found'} />} />
+     
 
       
 
